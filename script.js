@@ -9,7 +9,7 @@ function displayProducts(data) {
 
   data.forEach(product => {
     const li = document.createElement("li");
-    li.innerHTML = \`
+   li.innerHTML = `
       <strong>\${product.nom}</strong><br>
       \${product.prix.toLocaleString()} FCFA<br>
       <small>\${product.categorie}</small><br>
@@ -29,7 +29,7 @@ function renderJumiaOffers(data) {
   affiliés.forEach(product => {
     const div = document.createElement("div");
     div.className = "jumia-card";
-    div.innerHTML = \`
+    div.innerHTML = `
       <img src="\${product.image}" alt="\${product.nom}" />
       <h4>\${product.nom}</h4>
       <p><strong>\${product.prix.toLocaleString()} FCFA</strong></p>
