@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,12 +8,39 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Bienvenue sur Samaprix</h1>
-  <input type="text" id="search" placeholder="Rechercher un produit...">
-  <ul id="products">
-    <li>Ordinateur HP - 250 000 FCFA</li>
-    <li>Télé Samsung - 400 000 FCFA</li>
-  </ul>
+
+  <header>
+    <img src="https://via.placeholder.com/150x50?text=Samaprix" alt="Logo Samaprix">
+    <h1>Bienvenue sur Samaprix</h1>
+  </header>
+
+  <div class="container">
+    <input type="text" id="search" placeholder="Rechercher un produit...">
+
+    <ul id="products">
+      <li>
+        <span>Ordinateur HP - 250 000 FCFA</span>
+        <a href="#" class="buy-button">Acheter</a>
+      </li>
+      <li>
+        <span>Télé Samsung - 400 000 FCFA</span>
+        <a href="#" class="buy-button">Acheter</a>
+      </li>
+      <li>
+        <span>Casque Bluetooth JBL - 35 000 FCFA</span>
+        <a href="#" class="buy-button">Acheter</a>
+      </li>
+      <li>
+        <span>Clé USB 64 Go - 5 000 FCFA</span>
+        <a href="#" class="buy-button">Acheter</a>
+      </li>
+    </ul>
+  </div>
+
+  <footer>
+    &copy; 2025 Samaprix - Comparateur de prix au Sénégal
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
