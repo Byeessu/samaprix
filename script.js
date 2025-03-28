@@ -9,12 +9,12 @@ function displayProducts(data) {
 
   data.forEach(product => {
     const li = document.createElement("li");
-   li.innerHTML = `
-      <strong>\${product.nom}</strong><br>
-      \${product.prix.toLocaleString()} FCFA<br>
-      <small>\${product.categorie}</small><br>
-      <a href="\${product.lien}" class="buy-button" target="_blank">Voir l'offre</a>
-    \`;
+    li.innerHTML = `
+      <strong>${product.nom}</strong><br>
+      ${product.prix.toLocaleString()} FCFA<br>
+      <small>${product.categorie}</small><br>
+      <a href="${product.lien}" class="buy-button" target="_blank">Voir l'offre</a>
+    `;
     productList.appendChild(li);
   });
 }
@@ -30,11 +30,11 @@ function renderJumiaOffers(data) {
     const div = document.createElement("div");
     div.className = "jumia-card";
     div.innerHTML = `
-      <img src="\${product.image}" alt="\${product.nom}" />
-      <h4>\${product.nom}</h4>
-      <p><strong>\${product.prix.toLocaleString()} FCFA</strong></p>
-      <a href="\${product.lien}" target="_blank" class="buy-button">Acheter</a>
-    \`;
+      <img src="${product.image}" alt="${product.nom}" />
+      <h4>${product.nom}</h4>
+      <p><strong>${product.prix.toLocaleString()} FCFA</strong></p>
+      <a href="${product.lien}" target="_blank" class="buy-button">Acheter</a>
+    `;
     jumiaSection.appendChild(div);
   });
 }
