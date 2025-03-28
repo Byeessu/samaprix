@@ -4,34 +4,44 @@
     "prix": 250000,
     "categorie": "Informatique",
     "image": "https://via.placeholder.com/300x200?text=HP+15s",
-    "lien": "https://www.jumia.sn/hp-15s"
+    "lien": "https://www.jumia.sn/hp-15s",
+    "whatsapp": false,
+    "populaire": true
   },
   {
     "nom": "Télé Samsung 32\" LED",
     "prix": 400000,
     "categorie": "Électronique",
     "image": "https://via.placeholder.com/300x200?text=Samsung+32",
-    "lien": "https://www.jumia.sn/samsung-32-led"
+    "lien": "https://www.jumia.sn/samsung-32-led",
+    "whatsapp": false,
+    "populaire": false
   },
   {
     "nom": "Casque Bluetooth JBL",
     "prix": 35000,
     "categorie": "Accessoires",
     "image": "https://via.placeholder.com/300x200?text=JBL+Casque",
-    "lien": "https://www.jumia.sn/jbl-bluetooth"
+    "lien": null,
+    "whatsapp": true,
+    "populaire": true
   },
   {
     "nom": "Clé USB 64 Go",
     "prix": 5000,
     "categorie": "Accessoires",
     "image": "https://via.placeholder.com/300x200?text=USB+64Go",
-    "lien": "https://www.jumia.sn/usb-64go"
+    "lien": null,
+    "whatsapp": true,
+    "populaire": false
   },
   {
     "nom": "Smartphone Infinix Hot 12",
     "prix": 135000,
     "categorie": "Téléphones",
     "image": "https://via.placeholder.com/300x200?text=Infinix+Hot+12",
-    "lien": "https://www.jumia.sn/infinix-hot-12"
+    "lien": "https://www.jumia.sn/infinix-hot-12",
+    "whatsapp": false,
+    "populaire": true
   }
 ]
