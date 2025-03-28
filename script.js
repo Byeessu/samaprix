@@ -1,57 +1,88 @@
+// script.js PRO MAX
 
 import { db } from './firebase.js';
-import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+import { collection, getDocs, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
-// Fonction d'affichage des produits principaux
-function displayProducts(data) {
-  const productList = document.getElementById("products");
+const productList = document.getElementById("products");
+const popularList = document.getElementById("popular-products");
+const jumiaSection = document.getElementById("jumia-products");
+const popup = document.getElementById("popup");
+
+function showPopup(message) {
+  popup.innerText = message;
+  popup.style.display = "block";
+  setTimeout(() => (popup.style.display = "none"), 3000);
+}
+
+function createProductCard(product) {
+  const card = document.createElement("div");
+  card.className = "product-card";
+
+  card.innerHTML = `
+    ${product.populaire ? '<div class="badge-populaire">🔥 Populaire</div>' : ""}
+    <img src="${product.image}" alt="${product.nom}" />
+    <h4>${product.nom}</h4>
+    <p><strong>${product.prix.toLocaleString()} FCFA</strong></p>
+    <p>${product.categorie}</p>
+    <a href="${product.lien || '#'}" target="_blank" class="buy-button">Voir l'offre</a>
+    ${product.whatsapp ? `<a href="https://wa.me/221771234567?text=Bonjour, je veux ce produit : ${product.nom}" target="_blank" class="whatsapp-button">WhatsApp</a>` : ""}
+  `;
+
+  return card;
+}
+
+function renderAllProducts(data) {
   productList.innerHTML = "";
-
-  data.forEach(product => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <strong>${product.nom}</strong><br>
-      ${product.prix.toLocaleString()} FCFA<br>
-      <small>${product.categorie}</small><br>
-      <a href="${product.lien}" class="buy-button" target="_blank">Voir l'offre</a>
-    `;
-    productList.appendChild(li);
-  });
+  data.forEach((p) => productList.appendChild(createProductCard(p)));
 }
 
-// Fonction d'affichage section Jumia
-function renderJumiaOffers(data) {
-  const jumiaSection = document.getElementById("jumia-products");
-  const affiliés = data.filter(p => p.lien && p.lien.includes("aff_id"));
+function renderPopular(data) {
+  popularList.innerHTML = "";
+  data.filter(p => p.populaire).forEach((p) => popularList.appendChild(createProductCard(p)));
+}
 
+function renderJumia(data) {
   jumiaSection.innerHTML = "";
+  data.filter(p => p.lien && p.lien.includes("jumia")).forEach((p) => jumiaSection.appendChild(createProductCard(p)));
+}
 
-  affiliés.forEach(product => {
-    const div = document.createElement("div");
-    div.className = "jumia-card";
-    div.innerHTML = `
-      <img src="${product.image}" alt="${product.nom}" />
-      <h4>${product.nom}</h4>
-      <p><strong>${product.prix.toLocaleString()} FCFA</strong></p>
-      <a href="${product.lien}" target="_blank" class="buy-button">Acheter</a>
-    `;
-    jumiaSection.appendChild(div);
+function applyFilters(data) {
+  const search = document.getElementById("search").value.toLowerCase();
+  const cat = document.getElementById("categorie").value;
+  const prix = document.getElementById("prix").value;
+
+  return data.filter(p => {
+    const matchSearch = p.nom.toLowerCase().includes(search);
+    const matchCat = cat === "" || p.categorie === cat;
+    const matchPrix = prix === "" || (prix === "<100000" && p.prix < 100000) || (prix === ">100000" && p.prix > 100000);
+    return matchSearch && matchCat && matchPrix;
   });
 }
 
-// Chargement des produits depuis Firebase
-async function loadProducts() {
+function updateUI(data) {
+  const filtered = applyFilters(data);
+  renderAllProducts(filtered);
+  renderPopular(data);
+  renderJumia(data);
+}
+
+async function loadAndWatchProducts() {
   try {
-    const querySnapshot = await getDocs(collection(db, "produits"));
-    const produitsData = querySnapshot.docs.map(doc => doc.data());
-
-    console.log("✅ Produits récupérés depuis Firestore :", produitsData);
-
-    displayProducts(produitsData);
-    renderJumiaOffers(produitsData);
-  } catch (error) {
-    console.error("❌ Erreur de chargement Firebase :", error);
+    const ref = collection(db, "produits");
+    onSnapshot(ref, (snapshot) => {
+      const data = snapshot.docs.map(doc => doc.data());
+      console.log("📦 Produits à jour :", data);
+      updateUI(data);
+    });
+  } catch (err) {
+    console.error("❌ Erreur chargement Firestore:", err);
+    showPopup("Erreur chargement produits");
   }
 }
 
-loadProducts();
+// Événements sur les filtres
+["search", "categorie", "prix"].forEach(id => {
+  document.getElementById(id).addEventListener("input", () => loadAndWatchProducts());
+});
+
+loadAndWatchProducts();
