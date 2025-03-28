@@ -2,49 +2,76 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Amnafi - Comparateur de prix</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header>
-    <img src="https://via.placeholder.com/150x50?text=Amnafi.com" alt="Logo Amnafi">
-    <h1>Bienvenue sur Amnafi</h1>
-    <p>Trouvez, comparez, économisez — partout au Sénégal 🇸🇳</p>
-  </header>
+<!-- Bandeau promo animé -->
+<div style="background: #ff9800; color: white; text-align: center; padding: 12px; font-weight: bold; animation: slideIn 1s ease;">
+  📦 Livraison gratuite à Dakar cette semaine ! 🎉 Profitez-en maintenant sur Amnafi.com
+</div>
 
-  <div class="container">
-    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-      <input type="text" id="search" placeholder="Rechercher un produit..." style="flex: 1; min-width: 250px;">
-      
-      <select id="filter-category" style="padding: 10px; border-radius: 8px;">
-        <option value="tous">Toutes les catégories</option>
-        <option value="Informatique">Informatique</option>
-        <option value="Électronique">Électronique</option>
-        <option value="Téléphones">Téléphones</option>
-        <option value="Accessoires">Accessoires</option>
-      </select>
+<header>
+  <img src="https://via.placeholder.com/150x50?text=Amnafi.com" alt="Logo Amnafi">
+  <h1>Bienvenue sur Amnafi</h1>
+  <p>Trouvez, comparez, économisez — partout au Sénégal 🇸🇳</p>
+</header>
 
-      <select id="filter-price" style="padding: 10px; border-radius: 8px;">
-        <option value="tous">Tous les prix</option>
-        <option value="moins50000">Moins de 50 000 FCFA</option>
-        <option value="50000a150000">50 000 à 150 000 FCFA</option>
-        <option value="plus150000">Plus de 150 000 FCFA</option>
-      </select>
-    </div>
+<div class="container">
+  <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+    <input type="text" id="search" placeholder="Rechercher un produit..." style="flex: 1; min-width: 250px;">
+    
+    <select id="filter-category" style="padding: 10px; border-radius: 8px;">
+      <option value="tous">Toutes les catégories</option>
+      <option value="Informatique">Informatique</option>
+      <option value="Électronique">Électronique</option>
+      <option value="Téléphones">Téléphones</option>
+      <option value="Accessoires">Accessoires</option>
+    </select>
 
-    <ul id="products">
-      <!-- Les produits seront injectés ici dynamiquement -->
-    </ul>
+    <select id="filter-price" style="padding: 10px; border-radius: 8px;">
+      <option value="tous">Tous les prix</option>
+      <option value="moins50000">Moins de 50 000 FCFA</option>
+      <option value="50000a150000">50 000 à 150 000 FCFA</option>
+      <option value="plus150000">Plus de 150 000 FCFA</option>
+    </select>
   </div>
 
-  <footer>
-    &copy; 2025 Amnafi.com | Trouvez le meilleur prix, près de chez vous 🇸🇳
-  </footer>
+  <ul id="products">
+    <!-- Produits injectés dynamiquement depuis Firebase -->
+  </ul>
+</div>
 
-  <!-- Chargement en tant que module ES6 -->
-  <script type="module" src="script.js"></script>
+<footer>
+  &copy; 2025 Amnafi.com | Trouvez le meilleur prix, près de chez vous 🇸🇳
+</footer>
+
+<!-- Pop-up de notification -->
+<div id="popup" class="popup" style="display:none;">Produit ajouté avec succès !</div>
+
+<!-- Script principal -->
+<script type="module" src="script.js"></script>
+
+<!-- Script pop-up -->
+<script type="module">
+  const popup = document.getElementById("popup");
+  function showPopup(message) {
+    popup.textContent = message;
+    popup.style.display = "block";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+  }
+
+  document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("buy-button")) {
+      showPopup("Redirection vers le vendeur…");
+    }
+  });
+</script>
+
 </body>
 </html>
