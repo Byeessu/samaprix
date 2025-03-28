@@ -2,56 +2,22 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Import Produits Affiliés - Amnafi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Import de Produits Affiliés Jumia</title>
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="import_affilies.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    h2 { color: #444; }
+    #import-btn { padding: 10px 20px; background: green; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
+    #status { margin-top: 20px; font-weight: bold; }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; padding: 20px;">
+<body>
   <h2>🛠️ Import de Produits Affiliés Jumia</h2>
-  <p>Ce script va automatiquement ajouter les produits à votre base Firebase (collection <strong>produits</strong>).</p>
-  <p><strong>📦 Assurez-vous que le fichier <code>produits_affilies.json</code> est dans le même dossier que cette page.</strong></p>
-
-  <button id="startImport" style="padding: 10px 20px; background-color: green; color: white; border: none; border-radius: 5px; font-weight: bold;">
-    ✅ Lancer l'import
-  </button>
-
-  <div id="log" style="margin-top: 20px; font-size: 0.9em;"></div>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyCyhljAG5cWNAkVlm6TAwKMj-5h0MZ1GU8",
-      authDomain: "amnafi.firebaseapp.com",
-      projectId: "amnafi",
-      storageBucket: "amnafi.firebasestorage.app",
-      messagingSenderId: "584032001295",
-      appId: "1:584032001295:web:15813ab0e04d0efd86327a",
-      measurementId: "G-5878NTTZTZ"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const logDiv = document.getElementById("log");
-
-    document.getElementById("startImport").addEventListener("click", async () => {
-      logDiv.innerHTML = "<p>⏳ Importation en cours...</p>";
-      try {
-        const response = await fetch("produits_affilies.json");
-        const produits = await response.json();
-
-        for (const produit of produits) {
-          await addDoc(collection(db, "produits"), produit);
-          logDiv.innerHTML += `<p>✅ ${produit.nom} ajouté.</p>`;
-        }
-
-        logDiv.innerHTML += "<p style='color: green;'><strong>🎉 Import terminé avec succès !</strong></p>";
-      } catch (e) {
-        console.error(e);
-        logDiv.innerHTML += "<p style='color: red;'>❌ Erreur durant l'import.</p>";
-      }
-    });
-  </script>
+  <p>Ce script va automatiquement ajouter les produits à votre base Firestore (collection <strong>produits</strong>).</p>
+  <p>📦 Assurez-vous que le fichier <code>produits_affilies.json</code> est bien dans ce dépôt GitHub.</p>
+  <button id="import-btn">✅ Lancer l'import</button>
+  <div id="status"></div>
 </body>
 </html>
