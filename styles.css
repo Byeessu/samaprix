@@ -171,3 +171,39 @@ footer {
   border-radius: 6px;
   margin-bottom: 10px;
 }
+#offres-jumia {
+  background: #f0f9ff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#offres-jumia h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.jumia-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.jumia-card {
+  background: white;
+  border-radius: 10px;
+  min-width: 220px;
+  max-width: 220px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.jumia-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
