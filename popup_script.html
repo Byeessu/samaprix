@@ -1,0 +1,21 @@
+
+<!-- Pop-up JS -->
+<div id="popup" class="popup" style="display:none;">Produit ajouté avec succès !</div>
+
+<script type="module">
+  const popup = document.getElementById("popup");
+  function showPopup(message) {
+    popup.textContent = message;
+    popup.style.display = "block";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+  }
+
+  // Exemple : simuler un clic d’achat
+  document.addEventListener("click", function(e) {
+    if (e.target.classList.contains("buy-button")) {
+      showPopup("Redirection vers le vendeur…");
+    }
+  });
+</script>

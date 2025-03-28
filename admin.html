@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Amnafi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body style="padding: 20px; max-width: 800px; margin: auto;">
+
+  <h2>🛠️ Admin Amnafi — Ajouter un produit</h2>
+
+  <form id="productForm" style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
+    <input type="text" id="nom" placeholder="Nom du produit" required>
+    <input type="number" id="prix" placeholder="Prix (FCFA)" required>
+    <input type="text" id="categorie" placeholder="Catégorie (ex: Informatique)" required>
+    <input type="url" id="image" placeholder="Lien de l'image (URL)" required>
+    <input type="url" id="lien" placeholder="Lien d'achat ou d'affiliation (URL)">
+    
+    <label><input type="checkbox" id="whatsapp"> Commander par WhatsApp</label>
+    <label><input type="checkbox" id="populaire"> Produit populaire</label>
+
+    <button type="submit" class="buy-button">✅ Ajouter le produit</button>
+  </form>
+
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCyhljAG5cWNAkVlm6TAwKMj-5h0MZ1GU8",
+      authDomain: "amnafi.firebaseapp.com",
+      projectId: "amnafi",
+      storageBucket: "amnafi.firebasestorage.app",
+      messagingSenderId: "584032001295",
+      appId: "1:584032001295:web:15813ab0e04d0efd86327a",
+      measurementId: "G-5878NTTZTZ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("productForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = {
+        nom: document.getElementById("nom").value.trim(),
+        prix: Number(document.getElementById("prix").value),
+        categorie: document.getElementById("categorie").value.trim(),
+        image: document.getElementById("image").value.trim(),
+        lien: document.getElementById("lien").value.trim(),
+        whatsapp: document.getElementById("whatsapp").checked,
+        populaire: document.getElementById("populaire").checked
+      };
+
+      try {
+        await addDoc(collection(db, "produits"), data);
+        result.innerHTML = "<span style='color: green;'>✅ Produit ajouté avec succès !</span>";
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        result.innerHTML = "<span style='color: red;'>❌ Erreur lors de l'ajout.</span>";
+      }
+    });
+  </script>
+</body>
+</html>

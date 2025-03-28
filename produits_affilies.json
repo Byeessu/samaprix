@@ -1,0 +1,182 @@
+[
+  {
+    "nom": "Ordinateur Portable HP 255 G8",
+    "prix": 255000,
+    "categorie": "Informatique",
+    "image": "https://sn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/64/558944/1.jpg",
+    "lien": "https://www.jumia.sn/hp-255-g8-ordinateur-portable-core-i3-4gb-1tb-15-6-84485546.html?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": true
+  },
+  {
+    "nom": "Smartphone Samsung Galaxy A04",
+    "prix": 99900,
+    "categorie": "T\u00e9l\u00e9phones",
+    "image": "https://sn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/45/678464/1.jpg",
+    "lien": "https://www.jumia.sn/samsung-galaxy-a04-6-5-3go-32go-13mp-5000mah-noir-46487654.html?aff_id=AMNAFI",
+    "whatsapp": true,
+    "populaire": true
+  },
+  {
+    "nom": "Casque JBL Bluetooth T500",
+    "prix": 19500,
+    "categorie": "Audio",
+    "image": "https://sn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/91/245965/1.jpg",
+    "lien": "https://www.jumia.sn/jbl-t500bt-casque-bluetooth-noir-56954219.html?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": true
+  },
+  {
+    "nom": "\u00c9couteurs Xiaomi Redmi Buds 4 Lite",
+    "prix": 16500,
+    "categorie": "Accessoires",
+    "image": "https://sn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/97/114975/1.jpg",
+    "lien": "https://www.jumia.sn/xiaomi-redmi-buds-4-lite-57974179.html?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": false
+  },
+  {
+    "nom": "Smart TV LG 32 pouces",
+    "prix": 165000,
+    "categorie": "\u00c9lectronique",
+    "image": "https://sn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/57/901865/1.jpg",
+    "lien": "https://www.jumia.sn/lg-smart-tv-32-hd-81650975.html?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": true
+  },
+  {
+    "nom": "Produit Populaire 6",
+    "prix": 16000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+6",
+    "lien": "https://www.jumia.sn/produit-6?aff_id=AMNAFI",
+    "whatsapp": true,
+    "populaire": true
+  },
+  {
+    "nom": "Produit Populaire 7",
+    "prix": 17000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+7",
+    "lien": "https://www.jumia.sn/produit-7?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": false
+  },
+  {
+    "nom": "Produit Populaire 8",
+    "prix": 18000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+8",
+    "lien": "https://www.jumia.sn/produit-8?aff_id=AMNAFI",
+    "whatsapp": true,
+    "populaire": false
+  },
+  {
+    "nom": "Produit Populaire 9",
+    "prix": 19000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+9",
+    "lien": "https://www.jumia.sn/produit-9?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": true
+  },
+  {
+    "nom": "Produit Populaire 10",
+    "prix": 20000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+10",
+    "lien": "https://www.jumia.sn/produit-10?aff_id=AMNAFI",
+    "whatsapp": true,
+    "populaire": false
+  },
+  {
+    "nom": "Produit Populaire 11",
+    "prix": 21000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+11",
+    "lien": "https://www.jumia.sn/produit-11?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": false
+  },
+  {
+    "nom": "Produit Populaire 12",
+    "prix": 22000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+12",
+    "lien": "https://www.jumia.sn/produit-12?aff_id=AMNAFI",
+    "whatsapp": true,
+    "populaire": true
+  },
+  {
+    "nom": "Produit Populaire 13",
+    "prix": 23000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+13",
+    "lien": "https://www.jumia.sn/produit-13?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": false
+  },
+  {
+    "nom": "Produit Populaire 14",
+    "prix": 24000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+14",
+    "lien": "https://www.jumia.sn/produit-14?aff_id=AMNAFI",
+    "whatsapp": true,
+    "populaire": false
+  },
+  {
+    "nom": "Produit Populaire 15",
+    "prix": 25000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+15",
+    "lien": "https://www.jumia.sn/produit-15?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": true
+  },
+  {
+    "nom": "Produit Populaire 16",
+    "prix": 26000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+16",
+    "lien": "https://www.jumia.sn/produit-16?aff_id=AMNAFI",
+    "whatsapp": true,
+    "populaire": false
+  },
+  {
+    "nom": "Produit Populaire 17",
+    "prix": 27000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+17",
+    "lien": "https://www.jumia.sn/produit-17?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": false
+  },
+  {
+    "nom": "Produit Populaire 18",
+    "prix": 28000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+18",
+    "lien": "https://www.jumia.sn/produit-18?aff_id=AMNAFI",
+    "whatsapp": true,
+    "populaire": true
+  },
+  {
+    "nom": "Produit Populaire 19",
+    "prix": 29000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+19",
+    "lien": "https://www.jumia.sn/produit-19?aff_id=AMNAFI",
+    "whatsapp": false,
+    "populaire": false
+  },
+  {
+    "nom": "Produit Populaire 20",
+    "prix": 30000,
+    "categorie": "Divers",
+    "image": "https://via.placeholder.com/300x300?text=Produit+20",
+    "lien": "https://www.jumia.sn/produit-20?aff_id=AMNAFI",
+    "whatsapp": true,
+    "populaire": false
+  }
+]
