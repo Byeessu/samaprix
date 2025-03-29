@@ -1,87 +1,64 @@
-
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Amnafi - Comparateur de prix</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
 </head>
 <body>
-
-<!-- Bandeau promo animé -->
-<div style="background: #ff9800; color: white; text-align: center; padding: 12px; font-weight: bold; animation: slideIn 1s ease;">
-  📦 Livraison gratuite à Dakar cette semaine ! 🎉 Profitez-en maintenant sur Amnafi.com
-</div>
-
-<header>
-  <img src="https://via.placeholder.com/150x50?text=Amnafi.com" alt="Logo Amnafi">
-  <h1>Bienvenue sur Amnafi</h1>
-  <p>Trouvez, comparez, économisez — partout au Sénégal 🇸🇳</p>
-</header>
-
-<div class="container">
-  <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-    <input type="text" id="search" placeholder="Rechercher un produit..." style="flex: 1; min-width: 250px;">
-    
-    <select id="filter-category" style="padding: 10px; border-radius: 8px;">
-      <option value="tous">Toutes les catégories</option>
-      <option value="Informatique">Informatique</option>
-      <option value="Électronique">Électronique</option>
-      <option value="Téléphones">Téléphones</option>
-      <option value="Accessoires">Accessoires</option>
-      <option value="Audio">Audio</option>
-      <option value="Divers">Divers</option>
-    </select>
-
-    <select id="filter-price" style="padding: 10px; border-radius: 8px;">
-      <option value="tous">Tous les prix</option>
-      <option value="moins50000">Moins de 50 000 FCFA</option>
-      <option value="50000a150000">50 000 à 150 000 FCFA</option>
-      <option value="plus150000">Plus de 150 000 FCFA</option>
-    </select>
-  </div>
-
-  <ul id="products">
-    <!-- Produits injectés dynamiquement depuis Firebase -->
-  </ul>
-
-  <!-- Section Jumia -->
-  <section id="offres-jumia" style="margin-top: 40px;">
-    <h2 style="color: #0077ff;">🛍️ Nos Meilleures Offres Jumia</h2>
-    <div id="jumia-products" class="jumia-slider">
-      <!-- Produits affiliés injectés dynamiquement -->
-    </div>
-  </section>
-</div>
-
-<footer>
-  &copy; 2025 Amnafi.com | Trouvez le meilleur prix, près de chez vous 🇸🇳
-</footer>
-
-<!-- Pop-up de notification -->
-<div id="popup" class="popup" style="display:none;">Produit ajouté avec succès !</div>
-
-<!-- Script principal -->
-<script type="module" src="script.js"></script>
-
-<!-- Script pop-up -->
-<script type="module">
-  const popup = document.getElementById("popup");
-  function showPopup(message) {
-    popup.textContent = message;
-    popup.style.display = "block";
-    setTimeout(() => {
-      popup.style.display = "none";
-    }, 3000);
-  }
-
-  document.addEventListener("click", function(e) {
-    if (e.target.classList.contains("buy-button")) {
-      showPopup("Redirection vers le vendeur…");
-    }
-  });
-</script>
-
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="fr"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;Amnafi.com - Comparez, économisez&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="styles.css"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script type="module" src="script.js" defer&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="banner"&gt;🚚 Livraison gratuite à Dakar cette semaine ! 🎉 Profitez-en maintenant sur &lt;strong&gt;Amnafi.com&lt;/strong&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;img src="logo_amnafi.png" alt="Logo Amnafi" class="logo"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Bienvenue sur &lt;span&gt;Amnafi&lt;/span&gt;&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p class="slogan"&gt;Trouvez, comparez, économisez &amp;mdash; partout au Sénégal 🇸🇳&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="filters"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;input type="text" id="search" placeholder="Rechercher un produit..."&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="category-filter"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value=""&gt;Toutes les catégories&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="price-filter"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value=""&gt;Tous les prix&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="-10000"&gt;Moins de 10 000 FCFA&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="10000-50000"&gt;10 000 - 50 000 FCFA&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="50000-100000"&gt;50 000 - 100 000 FCFA&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value="100000-"&gt;Plus de 100 000 FCFA&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section id="highlight-jumia"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h3&gt;🎁 Nos Meilleures Offres Jumia&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="jumia-products" class="product-grid"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;section id="all-products"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h3&gt;🔍 Tous les Produits&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;ul id="products" class="product-list"&gt;&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p&gt;&amp;copy; 2025 &lt;strong&gt;Amnafi.com&lt;/strong&gt; | Trouvez le meilleur prix, près de chez vous 🇸🇳&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script type="module" src="firebase.js"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
